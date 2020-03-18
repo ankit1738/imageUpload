@@ -16,7 +16,6 @@ export class AppComponent {
   successMsg: string;
   imgURL: any;
   isImageSelected: boolean;
-
   constructor(private http: HttpClient) {
 
   }
@@ -85,10 +84,12 @@ export class AppComponent {
   upload() {
     const formData = new FormData();
     for (const image of this.images) {
-      formData.append('uploads[]', image);
+      formData.append('uploads', image);
     }
 
-    this.http.post('/api/upload', formData)
+    const uploadedImages = formData.getAll('uploads');
+
+    this.http.post('/api/upload', {uploadedImages})
       .subscribe((response) => {
         console.log('response received is ', response);
       });
