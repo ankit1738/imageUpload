@@ -11,7 +11,7 @@ export class AppComponent {
   reader = new FileReader();
   title = 'imageUpload';
   uploadedFile: File;
-  images: string[];
+  images: Array<string> = [];
   errorMsg: string;
   successMsg: string;
   imgURL: any;
