@@ -27,7 +27,7 @@ Technical Spec
 
 INSTRUCTION TO RUN
 
-    1. Clone the project
+    1. Clone the project from master branch
 
     2. Install the dependencies 
 
