@@ -110,6 +110,7 @@ export class UploaImageComponent implements OnInit {
 
     this.uploadService.uploadImage(uploadedImages)
       .subscribe((response) => {
+        console.log(response);
         this.router.navigate(['/viewImages']);
       });
   }

@@ -13,8 +13,8 @@ export class ViewImagesComponent implements OnInit {
   constructor(private uploadService: UploadService, private router: Router) {
     this.uploadService.getImages()
     .subscribe((response) => {
+      console.log(response);
       this.imageURL = response;
-      console.log(this.imageURL);
     });
   }
 

@@ -11,15 +11,14 @@ app.use(bodyParser.json({
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(express.static('public'));
+//app.use(express.static(__dirname+'/uploads'));
 
 //Upload file post request
 app.post('/api/upload', (req, res) => {
-    // clear all files
-    
+    // clear all files    
     fsExtra.emptyDirSync(config.uploadDir);
 
-  // upload files
+    // upload files
     var images = req.body.uploadedImages;
     images.forEach((element, index) => {
         base64Data = element.replace(/^data:image\/png;base64,/, "");
@@ -35,10 +34,24 @@ app.post('/api/upload', (req, res) => {
 });
 
 app.get('/api/getImages', (req, res) => {
+    let imgSrcArray = [];
+    let index = 0;
     fs.readdir(config.uploadDir, (err, data) => {
-        res.json({data});
+        if(err) console.log(err);
+        //res.json({data});
+        data.forEach((err, file) => {
+            fs.readFile(`uploads/${file}.png`, (err, file) => {
+                index++;
+                let base64Image = new Buffer(file, 'binary').toString('base64');
+                //combine all strings
+                let imgSrcString = `data:image/png;base64,${base64Image}`;
+                imgSrcArray.push(imgSrcString);
+                if(index == data.length) {
+                    res.json({imgSrcArray});
+                }                        
+            });
+        });
     });
-    
 })
 
 //Server
