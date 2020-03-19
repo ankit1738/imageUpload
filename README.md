@@ -19,6 +19,9 @@ Technical Spec
     The image is not streched but cropped from (0,0) i.e. Upper Left corner of the Image.
     This coordinate can be changed and Image can be cropped from the middle if one wants.
     
+    From frontend the images are converted to base64  format and send to server where it is then saved as an image file in the root/uploads directory.
+    To retrieve the image, First the image is read and converted to base64 format and sent to server where it is renderd inside n img tag
+    
 
 INSTRUCTION TO RUN
 
