@@ -1,6 +1,7 @@
 Assignment for Insider.
+Image cropping and uploading from scratch.
 
-IMPORTANT 
+Functional Spec 
 
     The application crops down the selected image to four specified dimensions.
 
@@ -11,6 +12,13 @@ IMPORTANT
     Uploaded images are then displayed on the next page.
 
     Image of dimensions 1024x1024 can be uploaded only.
+    
+Technical Spec
+    
+    The application used canvas tag to redraw the image selected into different dimensions.
+    The image is not streched but cropped from (0,0) i.e. Upper Left corner of the Image.
+    This coordinate can be changed and Image can be cropped from the middle if one wants.
+    
 
 INSTRUCTION TO RUN
 
