@@ -1,0 +1,23 @@
+body {
+    padding:32px;
+}
+
+.heading {
+margin:32px;
+}
+
+form {
+    padding: 0px;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+.resized {
+    object-fit: cover;
+}

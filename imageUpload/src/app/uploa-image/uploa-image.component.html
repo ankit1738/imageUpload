@@ -1,0 +1,30 @@
+<div class="jumbotron heading">
+
+        <h1 class="heading1">{{title}}</h1>
+      
+        <form action="/api/upload" method="post" enctype="multipart/form-data">
+          <input (change)="uploadFile($event)" accept='image/*' type="file" class="fileInput" id="file">
+          <span class="btn btn-primary" (click)="upload()" id="btnUpload">Upload</span>
+        </form>
+      
+        <h4 class="error">{{errorMsg}}</h4>
+        <h4 class="success">{{successMsg}}</h4>
+      
+      </div>
+      
+      <div class="displayImages" *ngIf="isImageSelected" >
+        <canvas id="horizontal" width="755" height="450" #horizontal></canvas>
+        <span class="btn btn-primary" (click)="upload(1)" id="btnUpload">Upload</span>
+        <hr>
+        <canvas id="verticle" width="365" height="450"></canvas>
+        <span class="btn btn-primary" (click)="upload(2)" id="btnUpload">Upload</span>
+        <hr>
+        <canvas id="horizontalSmall" width="365" height="212"></canvas>
+        <span class="btn btn-primary" (click)="upload(3)" id="btnUpload">Upload</span>
+      
+        <hr>
+        <canvas id="gallery" width="380" height="380"></canvas>
+        <span class="btn btn-primary" (click)="upload(4)" id="btnUpload">Upload</span>
+      
+        <hr>
+      </div>
