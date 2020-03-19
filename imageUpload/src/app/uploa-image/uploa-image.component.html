@@ -4,7 +4,8 @@
       
         <form action="/api/upload" method="post" enctype="multipart/form-data">
           <input (change)="uploadFile($event)" accept='image/*' type="file" class="fileInput" id="file">
-          <span class="btn btn-primary" (click)="upload()" id="btnUpload">Upload</span>
+          <span class="btn btn-primary" (click)="upload()" id="btnUpload" *ngIf="isImageSelected">Upload All</span>
+          <h6 *ngIf="isImageSelected">Use upload all button to upload all imgaes or use paticular upload button to upload that image</h6>
         </form>
       
         <h4 class="error">{{errorMsg}}</h4>

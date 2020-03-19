@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class UploaImageComponent implements OnInit {
   reader = new FileReader();
-  title = 'imageUpload';
+  title = 'Crop image and Upload';
   uploadedFile: File;
   images: Array<string> = [];
   errorMsg: string;
