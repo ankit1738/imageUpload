@@ -22,12 +22,12 @@ Technical Spec
 
 INSTRUCTION TO RUN
 
-    Clone the project
+    1. Clone the project
 
-    Install the dependencies
+    2. Install the dependencies 
 
-        To do this you need to go inside backend folder and run "npm install"
-        and go inside imageUpload folder and run "npm install"
+        open cmd inside backend folder and run "npm install"
+        and inside imageUpload folder and run "npm install"
 
-    Run the application
-        To do this go inside imageUpload folder and run "npm start"
+    3. Run the application
+        Open cmd inside backend folder and run "npm start"
